@@ -4,7 +4,7 @@
  * static functions, so please do not use any functions here.
  * 
  * This file have been modified from atk4/lib/static.php to integrate
- * with Joomla component system
+ * with Joomla component system. See http://agiletoolkit.org/a/joomla
  */
 
 define('undefined','_atk4_undefined_value');
