@@ -3,6 +3,7 @@
 	Implements support for Joomla
 	http://agiletoolkit.org/a/joomla
 */
+
 class ApiJoomla extends ApiFrontend {
 	/* 
 		Specify NULL as argument to use default connectivity method. You may
@@ -12,6 +13,12 @@ class ApiJoomla extends ApiFrontend {
 
 		http://agiletoolkit.org/a/joomla/db
 	*/
+
+	protected var $pathfinder_class = "JoomlaPathFinder";
+
+	function __construct(){
+		$this->pathfinder_class= "JoomlaPathFinder"; 
+	}
 
 	function dbConnect($dsn=undefined){
 		if($dsn !== undefined)return parent::dbConnect($dsn);
@@ -27,7 +34,7 @@ class ApiJoomla extends ApiFrontend {
 		$password 	= $conf->getValue('config.password');
 		$database	= $conf->getValue('config.db');
 		$prefix 	= $conf->getValue('config.dbprefix');
-		$driver 	= $conf->getValue('config.dbtype');
+		$driver 	= "mysql";// $conf->getValue('config.dbtype'); /*Mysqli driver giving problem*/
 		$debug 		= $conf->getValue('config.debug');
 
 		$pdo_dsn=array("$driver:host=$host;dbname=$database",
@@ -37,4 +44,5 @@ class ApiJoomla extends ApiFrontend {
 		return parent::dbConnect($pdo_dsn);
 
 	}
+
 }

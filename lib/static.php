@@ -8,7 +8,6 @@
  */
 
 define('undefined','_atk4_undefined_value');
-
 if(!function_exists('lowlevel_error')){
     function lowlevel_error($error,$lev=null){
         /*
