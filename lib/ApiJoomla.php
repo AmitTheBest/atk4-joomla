@@ -20,12 +20,6 @@ class ApiJoomla extends ApiFrontend {
 		http://agiletoolkit.org/a/joomla/db
 	*/
 
-	protected var $pathfinder_class = "JoomlaPathFinder";
-
-	function __construct(){
-		$this->pathfinder_class= "JoomlaPathFinder"; 
-	}
-
 	function dbConnect($dsn=undefined){
 		if($dsn !== undefined)return parent::dbConnect($dsn);
 
