@@ -5,6 +5,12 @@
 */
 
 class ApiJoomla extends ApiFrontend {
+
+    protected $pathfinder_class='JoomlaPathFinder';
+
+
+
+
 	/* 
 		Specify NULL as argument to use default connectivity method. You may
 		also specify a custom DSN for connectivity
@@ -13,12 +19,6 @@ class ApiJoomla extends ApiFrontend {
 
 		http://agiletoolkit.org/a/joomla/db
 	*/
-
-	protected var $pathfinder_class = "JoomlaPathFinder";
-
-	function __construct(){
-		$this->pathfinder_class= "JoomlaPathFinder"; 
-	}
 
 	function dbConnect($dsn=undefined){
 		if($dsn !== undefined)return parent::dbConnect($dsn);
@@ -45,4 +45,14 @@ class ApiJoomla extends ApiFrontend {
 
 	}
 
+	function add(){
+		$args=func_get_args();
+		$ret=call_user_func_array(array('parent','add'), $args);
+
+		if($ret instanceof jQuery){
+			$ret->chain_class='jQuery_JoomlaChain';
+		}
+
+		return $ret;
+	}
 }

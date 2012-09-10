@@ -8,7 +8,6 @@ class JoomlaPathFinder extends PathFinder {
 		// those so you don't have to
 		$base_directory=dirname(@$_SERVER['SCRIPT_FILENAME'])."/components/".JRequest::getVar('option');
 
-		// Compatibility with command-line
 		if(!$base_directory)$base_directory=realpath($GLOBALS['argv'][0]);
 
 		if(method_exists($this->api,'addDefaultLocations'))$this->api->addDefaultLocations($this,$base_directory);
@@ -29,7 +28,7 @@ class JoomlaPathFinder extends PathFinder {
 
 		// Files not found in webroot - will be looked for in library dir
 		// We are assuming that we are located as atk4/lib/PathFinder.php
-		$atk_directory=dirname(dirname(__FILE__));
+		$atk_directory=dirname(dirname(dirname(__FILE__))).'/atk4';
 		$atk_url=basename($atk_directory);
 
 		$this->atk_location=$this->addLocation('atk4',array(
@@ -45,8 +44,25 @@ class JoomlaPathFinder extends PathFinder {
 					'images'=>'img',
 					'css'=>array('templates/js','templates/'.$this->api->skin.'/css','templates/shared/css'),
 					))
-			->setBasePath(dirname(dirname(__FILE__)))
+			->setBasePath($atk_directory)
 			->setBaseURL($this->api->getConfig('atk/base_path','./atk4/'))
 			;
+
+
+
+
+
+
+
+		$atkj_directory=dirname(dirname(__FILE__));
+		$atkj_url=basename($atk_directory);
+
+		$this->atkj_location=$this->addLocation('atk4-joomla',array(
+					'php'=>'lib',
+					))
+			->setBasePath(dirname(dirname(__FILE__)))
+			->setBaseURL($this->api->getConfig('atk/base_joomla_path','./atk4-joomla/'))
+			;
 	}
+
 }

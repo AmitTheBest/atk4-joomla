@@ -1,14 +1,34 @@
 ztk4-joomla
 
-Currently this is not installable project just a porting of atk4 to work with joomla. Once the required changes are mature in the project, this project will be updated to a Joomla Component Development Component.
+This is a WORKING component for integrating Agile Toolkit with Joomla. It consists of a custom applicaiton class which will
+configure Agile Toolkit to work as a Joomla Component Development Component.
+
+STRUCTURE
+
+joomla
+ + components
+   + com_whatever
+     + atk4
+     + atk4-joomla
+     index.php     // must include atk4-joomla/loader.php, not atk4/loader.php
 
 
 INSTALL
+
+ 1. Create folder components/com_{YourComponentName}. Go into this empty folder
+ 1. get Agile Toolkit 4.2.2 or later (from github if not released) 
+ 2. get atk4-joomla
+ 3. copy atk4-joomla/example/yourcomponent.php to {YourComponentName}.php
+
+
+=== OLD README, please review and remove ===
+
 TO Use Atk4 for joomla you need to follow the following steps:
 
 NOTE: Remember This will not create any Menu in admin side or it will not be a installable component RIGHT NOW (but it will be soon) So you need to work yourself a bit now
 
 Step1: Create a folder in JOOMLA/components or JOOMLA/administrator/components named com_{YourComponentName}
-Step2: copy atk4, atk4-adons, at4-joomla
-Step3: copy yourcomponent.php and index.php files out in your component root 
+Step2: Setup your ATK4 as you do in this folder
+Step3: Put atk4-joomla in the same folder
+Step3: from this atk4-joomla/example folder move yourcomponent.php and index.php files out in your component root 
 Step4: Rename yourcomponent.php file with your component name, must be same as the one in foldername.
