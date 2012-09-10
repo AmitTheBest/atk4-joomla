@@ -1,5 +1,5 @@
 <?php
-$component = JRequest::getVar('options');
+$component = JRequest::getVar('option');
 
 $config['atk']['base_path']="components/$component/atk4/";
 //$config['dsn']='mysql://root:winserver@localhost/bhoomi';
