@@ -19,16 +19,3 @@ INSTALL
  1. get Agile Toolkit 4.2.2 or later (from github if not released) 
  2. get atk4-joomla
  3. copy atk4-joomla/example/yourcomponent.php to {YourComponentName}.php
-
-
-=== OLD README, please review and remove ===
-
-TO Use Atk4 for joomla you need to follow the following steps:
-
-NOTE: Remember This will not create any Menu in admin side or it will not be a installable component RIGHT NOW (but it will be soon) So you need to work yourself a bit now
-
-Step1: Create a folder in JOOMLA/components or JOOMLA/administrator/components named com_{YourComponentName}
-Step2: Setup your ATK4 as you do in this folder
-Step3: Put atk4-joomla in the same folder
-Step3: from this atk4-joomla/example folder move yourcomponent.php and index.php files out in your component root 
-Step4: Rename yourcomponent.php file with your component name, must be same as the one in foldername.
