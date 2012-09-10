@@ -26,6 +26,24 @@ class JoomlaPathFinder extends PathFinder {
 					))->setBasePath($base_directory)
 			;
 
+
+		$atkj_directory=dirname(dirname(__FILE__));
+		$atkj_url=basename($atk_directory);
+
+		$this->atkj_location=$this->addLocation('atk4-joomla',array(
+					'php'=>'lib',
+					'template'=>'templates',
+					))
+			->setBasePath(dirname(dirname(__FILE__)))
+			->setBaseURL($this->api->getConfig('atk/base_joomla_path','./atk4-joomla/'))
+			;
+
+
+
+
+
+			
+
 		// Files not found in webroot - will be looked for in library dir
 		// We are assuming that we are located as atk4/lib/PathFinder.php
 		$atk_directory=dirname(dirname(dirname(__FILE__))).'/atk4';
@@ -54,15 +72,6 @@ class JoomlaPathFinder extends PathFinder {
 
 
 
-		$atkj_directory=dirname(dirname(__FILE__));
-		$atkj_url=basename($atk_directory);
-
-		$this->atkj_location=$this->addLocation('atk4-joomla',array(
-					'php'=>'lib',
-					))
-			->setBasePath(dirname(dirname(__FILE__)))
-			->setBaseURL($this->api->getConfig('atk/base_joomla_path','./atk4-joomla/'))
-			;
 	}
 
 }

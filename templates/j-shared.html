@@ -1,0 +1,34 @@
+<!-- JUNK
+<?$js_include?>
+-->
+<script type="text/javascript">
+	$(function(){
+<?$document_ready?>
+	});
+</script>
+<div id="atk-layout" class="atk-wrapper">
+<div id="header">
+		<?logo?><div id="atk-logo" class="ui-widget-header float-left"><a 
+                            href="<?page?>index<?/?>"><img src="<?template?>images/logo.png<?/?>" /></a></div><?/logo?>
+		<div id="header-right">
+			<?Menu?>
+                    <div class="atk-menu atk-menu-horizontal ui-widget">
+                        <ul>
+						    <li class="ui-state-default"><a href="javascript:void(0)">Menu is not defined</a></li>
+                        </ul>
+					</div>
+			<?/?>
+			<div id="atk-version"><b><?name?>Agile Toolkit™<?/?></b><br/><i><?$version?></i></div>
+		</div>
+	</div>
+	<?$Content?>
+	<div id="atk-footer-guard"></div>
+</div>
+<?Footer?>
+<div id="footer" class="atk-wrapper">
+	<?footer_text?>
+	This component is using <a href="http://agiletoolkit.org/">Agile Toolkit</a> (Licensed under LGPL)<br/><a href="http://agiletoolkit.org/a/joomla">Joomla Component</a> &copy; 2011-2013 by <a href="http://xavoc.com/">Xavoc International</a>
+	<?/?>
+</div>
+<?/?>
+<div id="atk-growl-holder" class="atk-growl"></div>

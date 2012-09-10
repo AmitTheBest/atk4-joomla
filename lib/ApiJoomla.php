@@ -45,14 +45,21 @@ class ApiJoomla extends ApiFrontend {
 
 	}
 
-	function add(){
+	function init(){
+		parent::init();
+
+		$jui=$this->add('jJoomla');
+	}
+
+	// Use jJoomla instead of jUI. If you do use jUI by mistake, we will correct it
+	function add($c){
+		if($c=='jUI')return $this->add('jJoomla');
 		$args=func_get_args();
-		$ret=call_user_func_array(array('parent','add'), $args);
+		return call_user_func_array(array('parent','add'), $args);
+	}
 
-		if($ret instanceof jQuery){
-			$ret->chain_class='jQuery_JoomlaChain';
-		}
 
-		return $ret;
+	function defaultTemplate(){
+		return array('j-shared');
 	}
 }
