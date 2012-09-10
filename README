@@ -1,4 +1,4 @@
-Atk4-joomla
+ztk4-joomla
 
 Currently this is not installable project just a porting of atk4 to work with joomla. Once the required changes are mature in the project, this project will be updated to a Joomla Component Development Component.
 
@@ -6,7 +6,7 @@ Currently this is not installable project just a porting of atk4 to work with jo
 INSTALL
 TO Use Atk4 for joomla you need to follow the following steps:
 
-NOTE: Remember This will not create any Menu in admin side or it will not be a installable component RIGHT NOW (but it will be soon) So you need to work yourself a bit now .. working on joomla 2.5.
+NOTE: Remember This will not create any Menu in admin side or it will not be a installable component RIGHT NOW (but it will be soon) So you need to work yourself a bit now
 
 Step1: Create a folder in JOOMLA/components or JOOMLA/administrator/components named com_{YourComponentName}
 Step2: copy atk4, atk4-adons, at4-joomla
