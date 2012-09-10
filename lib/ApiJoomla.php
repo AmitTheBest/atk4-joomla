@@ -8,6 +8,8 @@ class ApiJoomla extends ApiFrontend {
 
     protected $pathfinder_class='JoomlaPathFinder';
 
+    public $db_prefix=''; // waht should be in front of every db
+
 
 
 
@@ -33,7 +35,7 @@ class ApiJoomla extends ApiFrontend {
 		$user 		= $conf->getValue('config.user');
 		$password 	= $conf->getValue('config.password');
 		$database	= $conf->getValue('config.db');
-		$prefix 	= $conf->getValue('config.dbprefix');
+		$this->db_prefix 	= $conf->getValue('config.dbprefix');
 		$driver 	= "mysql";// $conf->getValue('config.dbtype'); /*Mysqli driver giving problem*/
 		$debug 		= $conf->getValue('config.debug');
 
@@ -49,6 +51,14 @@ class ApiJoomla extends ApiFrontend {
 		parent::init();
 
 		$jui=$this->add('jJoomla');
+
+		$this->addHook('beforeObjectInit',function($caller,&$obj){
+			if($obj instanceof Model_Table){
+				$prefix=substr($obj->table,0,strlen($caller->api->db_prefix));
+				if($prefix!=$caller->api->db_prefix)$obj->table=
+					$caller->api->db_prefix.$obj->table;
+			}
+		});
 	}
 
 	// Use jJoomla instead of jUI. If you do use jUI by mistake, we will correct it
