@@ -37,7 +37,7 @@ class JoomlaPathFinder extends PathFinder {
 					'css'=>'templates/css'
 					))
 			->setBasePath(dirname(dirname(__FILE__)))
-			->setBaseURL($this->api->getConfig('atk/base_component_path','./atk4-joomla/'))
+			->setBaseURL($this->api->getConfig('atk/base_component_path',JPATH_COMPONENT_ADMINISTRATOR.'/atk4-joomla/')) /*Admin side given importance*/
 			;
 
 
