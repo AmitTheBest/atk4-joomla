@@ -2,6 +2,7 @@
 $component = JRequest::getVar('option');
 
 $config['atk']['base_path']="components/$component/atk4/";
+$config['atk']['base_component_path']="components/$component/atk4-joomla/";
 //$config['dsn']='mysql://root:winserver@localhost/bhoomi';
 
 $config['url_postfix']='';

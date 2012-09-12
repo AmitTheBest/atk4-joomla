@@ -20,6 +20,7 @@ class JoomlaPathFinder extends PathFinder {
 					'xslt'=>'templates/xslt',
 					'mail'=>'templates/mail',
 					'js'=>'templates/js',
+					'css'=>'templates/css',
 					'banners'=>'banners',
 					'logs'=>'logs',
 					'dbupdates'=>'docs/dbupdates',
@@ -33,9 +34,10 @@ class JoomlaPathFinder extends PathFinder {
 		$this->atkj_location=$this->addLocation('atk4-joomla',array(
 					'php'=>'lib',
 					'template'=>'templates',
+					'css'=>'templates/css'
 					))
 			->setBasePath(dirname(dirname(__FILE__)))
-			->setBaseURL($this->api->getConfig('atk/base_joomla_path','./atk4-joomla/'))
+			->setBaseURL($this->api->getConfig('atk/base_component_path','./atk4-joomla/'))
 			;
 
 
